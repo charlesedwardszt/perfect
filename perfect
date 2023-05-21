@@ -1,0 +1,14 @@
+def is_perfect_number(num)
+  sum = 1
+  (2..Math.sqrt(num)).each do |i|
+    sum += i + (num / i) if num % i == 0
+  end
+  sum == num && num != 1
+end
+
+number = 28
+if is_perfect_number(number)
+  puts "#{number} является совершенным числом"
+else
+  puts "#{number} не является совершенным числом"
+end
